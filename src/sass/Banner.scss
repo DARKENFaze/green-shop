@@ -1,0 +1,90 @@
+.main-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 58px;
+  background: linear-gradient(
+    97.77deg,
+    rgba(245, 245, 245, 0.5) -23.46%,
+    rgba(245, 245, 245, 0.5) 107.51%
+  );
+
+  .banner-content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    .wellCom {
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 16px;
+      letter-spacing: 0.1em;
+      text-align: left;
+    }
+
+    h1 {
+      font-size: 70px;
+      font-weight: 900;
+      line-height: 70px;
+      text-transform: uppercase;
+      width: 530px;
+      height: 140px;
+    }
+    span {
+      font-size: 70px;
+      font-weight: 900;
+      line-height: 70px;
+      color: rgb(70, 163, 89);
+    }
+    .lorem-text {
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 24px;
+      height: 45px;
+      width: 557px;
+    }
+  }
+  .banner-btn {
+    width: 140px;
+    height: 40px;
+    display: flex;
+    position: relative;
+    top: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 6px;
+    border: none;
+    color: #ffffff;
+    background: rgba(70, 163, 88, 1);
+  }
+
+  .flowers {
+    display: flex;
+    align-items: center;
+
+    .smallFlower {
+      position: relative;
+      bottom: -154px;
+      left: 88px;
+    }
+  }
+}
+
+@media (max-width: 1322px) {
+  .main-banner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .banner-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    p,
+    h1 {
+      text-align: center;
+    }
+  }
+}
