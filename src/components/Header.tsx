@@ -5,7 +5,7 @@ import logoBrend from "../assets/icons/logoBrend.svg";
 import serachIcon from "../assets/icons/search.svg";
 import shopIcon from "../assets/icons/shopIcon.svg";
 import loginIcon from "../assets/icons/loginIcon.svg";
-import menuIcon from "../assets/icons/menu.png"; // Menyu ikonasini import qiling
+import menuIcon from "../assets/icons/menu-toggle.svg"; // Menyu ikonasini import qiling
 
 const Header: React.FC = () => {
   const [isNavVisible, setNavVisible] = useState(false); // Menyu ko'rsatish uchun holat
@@ -17,16 +17,20 @@ const Header: React.FC = () => {
   return (
     <div className="container">
       <header className="site-header">
-        <div className="logo">
-          <a href="/">
-            <img src={logoBrend} alt="" />
-            <h3>GREENSHOP</h3>
-          </a>
+        <div className={isNavVisible ? "active" : ""}>
+          <div className="logo">
+            <a href="/">
+              <img src={logoBrend} alt="" />
+              <h3>GREENSHOP</h3>
+            </a>
+          </div>
         </div>
 
-        <div className="menu-icon" onClick={toggleNav}>
-          <img src={menuIcon} alt="Menu" />
-        </div>
+        <button className="menuToggle_btn">
+          <div className="menu-icon" onClick={toggleNav}>
+            <img src={menuIcon} alt="Menu" />
+          </div>
+        </button>
 
         {/* Menyu holatiga qarab ko'rsatiladi */}
         <nav className={isNavVisible ? "active" : ""}>
@@ -49,7 +53,7 @@ const Header: React.FC = () => {
         <div className="header-caterogies">
           <img src={serachIcon} alt="" />
           <img src={shopIcon} alt="" />
-          <button>
+          <button className="LoginBtn">
             <img src={loginIcon} alt="" />
             <p>Login</p>
           </button>

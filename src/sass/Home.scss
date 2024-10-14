@@ -13,6 +13,7 @@
     display: flex;
     flex-direction: column;
     gap: 15px;
+
     .wellCom {
       font-size: 14px;
       font-weight: 500;
@@ -29,12 +30,14 @@
       width: 530px;
       height: 140px;
     }
+
     span {
       font-size: 70px;
       font-weight: 900;
       line-height: 70px;
       color: rgb(70, 163, 89);
     }
+
     .lorem-text {
       font-size: 14px;
       font-weight: 400;
@@ -43,12 +46,10 @@
       width: 557px;
     }
   }
+
   .banner-btn {
     width: 140px;
     height: 40px;
-    display: flex;
-    position: relative;
-    top: 25px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -57,6 +58,8 @@
     border: none;
     color: #ffffff;
     background: rgba(70, 163, 88, 1);
+    position: relative;
+    top: 25px;
   }
 
   .flowers {
@@ -73,18 +76,28 @@
 
 @media (max-width: 1322px) {
   .main-banner {
-    display: flex;
     flex-direction: column;
     align-items: center;
   }
 
   .banner-content {
-    display: flex;
-    flex-direction: column;
     align-items: center;
+    text-align: center; // Matnni markazda joylash
+
     p,
     h1 {
       text-align: center;
+    }
+  }
+
+  .banner-btn {
+    top: 10px; // Tugmani ko'chirish (kichik ekranlar uchun)
+  }
+
+  .flowers {
+    .smallFlower {
+      bottom: -100px; // Kichik ekranlarda rasmni joylash
+      left: 0; // O'ngga o'zgartirish
     }
   }
 }
