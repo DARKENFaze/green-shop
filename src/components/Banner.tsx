@@ -1,46 +1,36 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
 import "../sass/Banner.scss";
 
+// Rasmlarni to'g'ridan-to'g'ri import qilish
+import bigFlower from "../assets/img/bigFlower.svg";
+import smallFlower from "../assets/img/smallFlower.svg";
+
 const Banner: React.FC = () => {
-  const [data, setData] = useState<any>(null);
+  const [bannerData, setBannerData] = useState<any>(null);
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get("http://localhost:5000/banner-data");
-        setData(response.data);
-      } catch (error) {
-        console.error("API ma'lumotlarini olishda xatolik:", error);
-      }
-    };
-
-    fetchData();
+    fetch("http://localhost:5000/banner-data")
+      .then((response) => response.json())
+      .then((data) => setBannerData(data));
   }, []);
 
-  if (!data) {
-    return <p>Yuklanmoqda...</p>; // Ma'lumotlar yuklanmaguncha kutish
-  }
+  if (!bannerData) return <div>Loading...</div>;
 
   return (
     <div className="container">
       <section className="main-banner">
         <div className="banner-content">
-          <p>{data.welcomeMessage}</p>
+          <p>{bannerData.welcomeMessage}</p>
           <h1>
-            {data.title} <span>{data.highlightedWord}</span>
+            {bannerData.title} <span>{bannerData.highlightedWord}</span>
           </h1>
-          <p className="lorem-text">{data.description}</p>
-          <button className="banner-btn">{data.buttonText}</button>
+          <p className="lorem-text">{bannerData.description}</p>
+          <button className="banner-btn">{bannerData.buttonText}</button>
         </div>
 
         <div className="flowers">
-          <img
-            className="smallFlower"
-            src={data.smallFlowerUrl}
-            alt="Small Flower"
-          />
-          <img src={data.bigFlowerUrl} alt="Big Flower" />
+          <img className="smallFlower" src={smallFlower} alt="Small Flower" />
+          <img src={bigFlower} alt="Big Flower" />
         </div>
       </section>
     </div>

@@ -4,6 +4,7 @@
   box-sizing: border-box;
   font-family: "MyCustomFont";
 }
+
 @font-face {
   font-family: "MyCustomFont";
   src: url("../fonts/Fontspring-DEMO-cerapro-medium.otf") format("woff2"),
@@ -12,18 +13,24 @@
   font-weight: normal;
   font-style: normal;
 }
+
 .container {
   max-width: 1920px;
   margin-left: 50px;
   margin-right: 50px;
 }
+
 header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   border-bottom: 0.3px solid rgba(70, 163, 88, 0.5);
+  padding: 15px 0;
 
   .logo {
+    flex-grow: 1; // Bo'sh joyni oladi va markazda joylashadi
+    text-align: center; // Logo matnini markazda joylashtirish
+
     a {
       display: flex;
       align-items: center;
@@ -37,6 +44,7 @@ header {
     }
   }
 }
+
 nav {
   padding: 26px 15px;
 
@@ -46,7 +54,7 @@ nav {
 
     li {
       list-style-type: none;
-      position: relative; // Pozitsiya belgilash
+      position: relative;
       display: flex;
       flex-direction: column;
       bottom: 0;
@@ -54,28 +62,27 @@ nav {
       a {
         text-decoration: none;
         color: rgba(61, 61, 61, 1);
-        padding: 10px 0; // Chiziq ostida bo'shliq
+        padding: 10px 0;
 
-        a:hover {
+        &:hover {
           font-weight: 700;
-          transition: transform 0.3s ease; // Animatsiya davomiyligi
+          transition: transform 0.3s ease;
         }
 
-        // Hover holati uchun animatsiya
         &::after {
           content: "";
           position: absolute;
           left: 0;
-          bottom: -5px; // Chiziqning pastda joylashishi
+          bottom: -5px;
           width: 100%;
-          height: 3px; // Chiziq balandligi
-          background-color: green; // Chiziq rangi
-          transform: scaleX(0); // Boshlanishda ko'rinmaydi
-          transition: transform 0.3s ease; // Animatsiya davomiyligi
+          height: 3px;
+          background-color: green;
+          transform: scaleX(0);
+          transition: transform 0.3s ease;
         }
 
         &:hover::after {
-          transform: scaleX(1); // Hover bo'lganda chiziq ko'rinadi
+          transform: scaleX(1);
         }
       }
     }
@@ -90,6 +97,7 @@ nav {
   img {
     cursor: pointer;
   }
+
   button {
     width: 100px;
     height: 35px;
@@ -106,5 +114,121 @@ nav {
       color: #ffffff;
       font-family: MyCustomFont;
     }
+  }
+}
+
+/* 830px dan kichik ekranlar uchun */
+@media (max-width: 830px) {
+  .container {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  header {
+    padding: 15px 40px;
+    align-items: center;
+
+    .logo {
+      a {
+        align-items: center;
+      }
+
+      h3 {
+        font-size: 1.5rem; /* Logo matnining o'lchamini kichraytirish */
+      }
+    }
+
+    nav {
+      width: 100%;
+      .nav-menu {
+        flex-direction: column;
+        gap: 20px; /* Menyular orasidagi masofani kichraytirish */
+        li {
+          a {
+            font-size: 1rem; /* Menyu elementlarini kichikroq qilish */
+          }
+        }
+      }
+    }
+
+    .header-caterogies {
+      gap: 10px; /* Icon va tugmalar orasidagi masofani kamaytirish */
+
+      img {
+        width: 20px; /* Iconlarni kichraytirish */
+        height: 20px;
+      }
+
+      button {
+        width: 80px;
+        height: 30px;
+
+        p {
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+}
+
+.menu-icon {
+  position: absolute; // Sahifaning chap yuqori qismida joylashishi uchun
+  top: 15px; // Yuqoridan masofa
+  left: 15px; // Chapdan masofa
+  display: none; // 830px dan katta ekranlarda ko'rsatmaymiz
+
+  img {
+    width: 30px; // Menyu ikonasi o'lchami
+    height: 30px;
+    cursor: pointer; // Bosilganda ko'rsatiladigan kursor
+  }
+}
+
+// 830px dan kichik ekranlar uchun
+@media (max-width: 830px) {
+  .menu-icon {
+    display: block; // Menyu ikonasi faqat kichik ekranlarda ko'rsatiladi
+  }
+
+  nav {
+    display: flex;
+    align-items: start;
+    position: absolute; // Menyu sahifadan ajralib turishi uchun
+    top: 70px; // Yuqoridan masofa
+    left: 0; // Chapdan masofa
+    background-color: rgba(255, 255, 255, 0.486); // Menyu orqa fon rangi
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); // Menyu uchun soyali effekt
+    opacity: 0; // Dastlab ko'rinmaydi
+    transform: translateX(-100%); // Menyu chapga siqilgan ko'rinishda
+    transition: opacity 0.3s ease, transform 0.3s ease; // Animatsiya uchun o'zgarishlar
+    z-index: 999; // Menyu barcha elementlardan yuqorida bo'lishi uchun
+    backdrop-filter: blur(5px);
+  }
+
+  .nav-menu {
+    display: flex; // Menyu ko'rsatiladi
+    flex-direction: column; // Menyu vertikal yo'nalishda
+    gap: 20px; // Menyu elementlari orasidagi masofa
+
+    li {
+      list-style-type: none;
+
+      a {
+        text-decoration: none;
+        color: rgba(61, 61, 61, 1);
+        padding: 10px 0;
+
+        &:hover {
+          font-weight: 700;
+          transition: transform 0.3s ease;
+        }
+      }
+    }
+  }
+
+  // Menyu ko'rsatish holati
+  nav.active {
+    opacity: 1; // Menyu ko'rinadi
+    transform: translateX(0); // Menyu joyida
   }
 }

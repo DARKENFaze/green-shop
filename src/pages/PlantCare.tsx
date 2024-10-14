@@ -1,7 +1,7 @@
 import React from "react";
 
 const PlantCare: React.FC = () => {
-  return <div>Plant Care Page</div>;
+  return <div></div>;
 };
 
 export default PlantCare;
