@@ -14,15 +14,26 @@
     "bootstrap": "^5.3.3",
     "cors": "^2.8.5",
     "express": "^4.21.1",
+<<<<<<< HEAD
     "latest": "^0.2.0",
+=======
+<<<<<<< HEAD
+    "latest": "^0.2.0",
+=======
+    "flowbite-react": "^0.10.2",
+>>>>>>> 16618be529007c1f6f1ab527f0b0930d7e18af74
+>>>>>>> 5c985a7240b091c731f0e7ef81bc38168d14d732
     "react": "^18.3.1",
     "react-bootstrap": "^2.10.5",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.27.0",
     "react-scripts": "5.0.1",
+<<<<<<< HEAD
     "react-slick": "^0.30.2",
     "sass": "^1.79.5",
     "slick-carousel": "^1.8.1",
+=======
+>>>>>>> 5c985a7240b091c731f0e7ef81bc38168d14d732
     "typescript": "^4.9.5",
     "web-vitals": "^2.1.4"
   },
