@@ -43,7 +43,7 @@ const Shop: React.FC = () => {
             <div className="section-right">
               <h1>Barberton Daisy</h1>
               <div className="price">
-                <h2>119.00</h2>
+                <h2>$119.00</h2>
                 <div className="stars">
                   <img src={star} alt="" />
                 </div>

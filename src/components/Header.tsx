@@ -21,7 +21,7 @@ const Header: React.FC = () => {
           <div className="logo">
             <a href="/">
               <img src={logoBrend} alt="" />
-              <h3>GREENSHOP{"$"}</h3>
+              <h3>GREENSHOP</h3>
             </a>
           </div>
         </div>
