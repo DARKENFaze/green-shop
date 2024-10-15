@@ -12,8 +12,8 @@ const Shop: React.FC = () => {
       <section>
         <div className="container">
           <div className="home-span">
-            <a href="#">Home</a>
-            <a href="#">Shop</a>
+            <a href="/">Home</a>
+            <a href="./Shop">Shop</a>
           </div>
           <div className="section-fon">
             <div className="section-left">
