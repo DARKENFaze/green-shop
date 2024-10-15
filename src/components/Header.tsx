@@ -17,13 +17,11 @@ const Header: React.FC = () => {
   return (
     <div className="container">
       <header className="site-header">
-        <div className={isNavVisible ? "active" : ""}>
-          <div className="logo">
-            <a href="/">
-              <img src={logoBrend} alt="" />
-              <h3>GREENSHOP</h3>
-            </a>
-          </div>
+        <div className="logo">
+          <a href="/">
+            <img src={logoBrend} alt="" />
+            <h3>GREENSHOP</h3>
+          </a>
         </div>
 
         <button className="menuToggle_btn">
@@ -52,7 +50,7 @@ const Header: React.FC = () => {
 
         <div className="header-caterogies">
           <img src={serachIcon} alt="" />
-          <img src={shopIcon} alt="" />
+          <img className="shopICN" src={shopIcon} alt="" />
           <button className="LoginBtn">
             <img src={loginIcon} alt="" />
             <p>Login</p>

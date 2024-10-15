@@ -195,6 +195,11 @@ nav {
   }
 }
 
+.shopping {
+  display: flex;
+  align-items: center;
+}
+
 // 830px dan kichik ekranlar uchun
 @media (max-width: 830px) {
   .menu-icon {
