@@ -240,11 +240,10 @@ nav {
     opacity: 1; // Menyu ko'rinadi
     transform: translateX(0); // Menyu joyida
   }
-  
 }
 
-// @media (max-width: 414px) {
-//   .logo {
-//     display: none;
-//   }
-// }
+@media (max-width: 414px) {
+  .logo {
+    display: none;
+  }
+}
